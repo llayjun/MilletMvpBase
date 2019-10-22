@@ -1,19 +1,24 @@
 package com.millet.z_basic.base.mvp;
 
 
-import android.app.Dialog;
-
 public interface IBaseMvpView {
     /**
      * 获取view层的dialog
      *
      * @return retuen
      */
-    Dialog getLoadDialog();
+    void showLoadingDialog();
 
     /***
      * 关闭view层的dialog
      */
-    void cancelLoadDialog();
+    void cancelLoadingDialog();
+
+    /**
+     * 显示错误消息
+     *
+     * @param message
+     */
+    void showError(String message);
 
 }

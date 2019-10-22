@@ -6,7 +6,6 @@ import android.os.Bundle;
  * @author qinzishuai
  * 描述：
  * 创建日期：2019/7/12
- *
  */
 public interface IActivity {
 
@@ -15,4 +14,6 @@ public interface IActivity {
     void initView();
 
     void initData(Bundle savedInstanceState);
+
+    void loadData();
 }

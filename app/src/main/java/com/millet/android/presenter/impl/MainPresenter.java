@@ -27,6 +27,7 @@ public class MainPresenter extends BaseMvpPresenter<IMainPresenter.IMainView> im
             @Override
             public void onError(Throwable e) {
                 NetLoadingUtils.hideDialog();
+                mView.showError(e.toString());
             }
 
             @Override

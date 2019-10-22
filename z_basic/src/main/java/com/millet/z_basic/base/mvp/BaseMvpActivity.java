@@ -15,7 +15,7 @@ import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-public abstract class BaseMvpActivity<V extends IBaseMvpView, P extends BaseMvpPresenter<V>> extends RxAppCompatActivity implements IBaseMvpView, IActivity, View.OnClickListener {
+public abstract class BaseMvpActivity<V extends IBaseMvpView, P extends BaseMvpPresenter<V>> extends RxAppCompatActivity implements IBaseMvpView, IActivity , View.OnClickListener {
 
     protected P mPresenter;
 
@@ -29,16 +29,16 @@ public abstract class BaseMvpActivity<V extends IBaseMvpView, P extends BaseMvpP
         super.onCreate(savedInstanceState);
         setContentView(getLayout());
         mUnbinder = ButterKnife.bind(this);
-        ImmersionBar.with(this).init();
+        initImmersionBar();
         if (mPresenter == null) {
             mPresenter = createPresenter();
         }
         mPresenter.attachMvpView((V) this);
         mPresenter.setActivity(this);
-        initImmersionBar();
         dialog = NetLoadingUtils.createDialog(this, "记载中...");
         initView();
         initData(savedInstanceState);
+        loadData();
     }
 
     protected abstract P createPresenter();
@@ -69,6 +69,18 @@ public abstract class BaseMvpActivity<V extends IBaseMvpView, P extends BaseMvpP
     @Override
     public Resources getResources() {
         return AdaptScreenUtils.adaptWidth(super.getResources(), 1080);
+    }
+
+    public void showLoadingDialog() {
+        if (null != dialog && !dialog.isShowing()) {
+            dialog.show();
+        }
+    }
+
+    public void hideLoadingDialog() {
+        if (null != dialog && dialog.isShowing()) {
+            dialog.dismiss();
+        }
     }
 
 }

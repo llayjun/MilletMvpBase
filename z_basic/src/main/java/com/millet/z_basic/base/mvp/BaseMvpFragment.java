@@ -71,4 +71,16 @@ public abstract class BaseMvpFragment<V extends IBaseMvpView, P extends BaseMvpP
         ImmersionBar.with(this).init();
     }
 
+    public void showLoadingDialog() {
+        if (null != dialog && !dialog.isShowing()) {
+            dialog.show();
+        }
+    }
+
+    public void hideLoadingDialog() {
+        if (null != dialog && dialog.isShowing()) {
+            dialog.dismiss();
+        }
+    }
+
 }

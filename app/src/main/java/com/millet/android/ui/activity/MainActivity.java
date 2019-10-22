@@ -1,6 +1,5 @@
 package com.millet.android.ui.activity;
 
-import android.app.Dialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -40,7 +39,7 @@ public class MainActivity extends BaseMvpActivity<IMainPresenter.IMainView, Main
     }
 
     @Override
-    public void onGetWeatherInfo(WeatherBean weatherBean) {
+    public void loadData() {
 
     }
 
@@ -50,12 +49,22 @@ public class MainActivity extends BaseMvpActivity<IMainPresenter.IMainView, Main
     }
 
     @Override
-    public Dialog getLoadDialog() {
-        return null;
+    public void onGetWeatherInfo(WeatherBean weatherBean) {
+
     }
 
     @Override
-    public void cancelLoadDialog() {
+    public void showLoadingDialog() {
+
+    }
+
+    @Override
+    public void cancelLoadingDialog() {
+
+    }
+
+    @Override
+    public void showError(String message) {
 
     }
 
