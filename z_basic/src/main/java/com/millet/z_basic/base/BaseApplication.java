@@ -9,6 +9,7 @@ import androidx.multidex.MultiDex;
 import androidx.multidex.MultiDexApplication;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.blankj.utilcode.util.FileUtils;
 import com.blankj.utilcode.util.Utils;
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.Logger;
@@ -64,6 +65,8 @@ public class BaseApplication extends MultiDexApplication implements Application.
         activityList = new ArrayList<>();
         // init utils
         Utils.init(this);
+        // init filePath
+        FileUtils.createOrExistsDir(BaseConst.PIC_PATH);
         // init arouter
         initARouter();
         // init logger

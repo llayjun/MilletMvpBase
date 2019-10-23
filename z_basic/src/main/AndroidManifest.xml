@@ -1,6 +1,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.millet.z_basic">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--如需使用人脸识别，还要添加：摄相头权限，拍照需要用到 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!--震动-->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <application>
 
         <!--引导页-->
@@ -11,6 +20,17 @@
         <!--图片预览-->
         <activity
             android:name=".ui.activity.ImagePreviewActivity"
+            android:screenOrientation="portrait" />
+
+        <!--图片裁剪-->
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <!--scan-->
+        <activity
+            android:name=".ui.view.scan.activity.ScanCodeActivity"
             android:screenOrientation="portrait" />
 
 
@@ -33,8 +53,4 @@
 
     </application>
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 </manifest>

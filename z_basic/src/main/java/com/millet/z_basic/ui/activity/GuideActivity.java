@@ -86,11 +86,6 @@ public class GuideActivity extends BaseMvpActivity {
     }
 
     @Override
-    public void onClick(View v) {
-
-    }
-
-    @Override
     public void showLoadingDialog() {
 
     }

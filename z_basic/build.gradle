@@ -96,5 +96,10 @@ dependencies {
     api 'com.ms:Banner-androidx:2.3.17'
     // photo view
     api 'com.github.chrisbanes:PhotoView:2.0.0'
+    // FlyTabLayout
+    api 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
+    // zxing
+    api 'com.google.zxing:core:3.3.0'
+
 
 }

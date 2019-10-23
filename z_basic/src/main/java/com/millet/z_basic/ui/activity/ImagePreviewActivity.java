@@ -121,11 +121,6 @@ public class ImagePreviewActivity extends BaseMvpActivity {
     }
 
     @Override
-    public void onClick(View view) {
-
-    }
-
-    @Override
     public void cancelLoadingDialog() {
 
     }

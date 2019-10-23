@@ -16,7 +16,7 @@ import com.trello.rxlifecycle2.components.support.RxFragment;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-public abstract class BaseMvpFragment<V extends IBaseMvpView, P extends BaseMvpPresenter<V>> extends RxFragment implements IBaseMvpView, IFragment, View.OnClickListener {
+public abstract class BaseMvpFragment<V extends IBaseMvpView, P extends BaseMvpPresenter<V>> extends RxFragment implements IBaseMvpView, IFragment {
 
     protected P mPresenter;
 
